@@ -1,0 +1,23 @@
+.Link {
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 700;
+    font-size: 1.25rem;
+    line-height: 1.6;
+    letter-spacing: 0.0075em;
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 20px;
+    transition: background-color 0.3s;
+    border-radius: 12px;
+
+
+}
+
+.Link:not(:last-child) {
+    margin-right: 30px;
+}
+
+.Link:hover,
+.Link:focus {
+    background-color: #0B44CD;
+}

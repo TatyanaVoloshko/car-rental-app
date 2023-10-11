@@ -1,0 +1,12 @@
+.App {
+  text-align: center;
+}
+
+.MuiContainer-root {
+  max-width: 100%;
+}
+
+body {
+  font-family: 'Manrope', sans-serif;
+}
+
