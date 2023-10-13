@@ -1,6 +1,5 @@
 export const selectCatalogs = (state) => state.catalogs.items;
 export const selectFavoriteCards = (state) => state.favoriteCards.favoriteCards;
-export const selectFilter = ({ filter }) => filter;
 export const selectFilteredCatalogs = ({ catalogs: { items }, filter }) => {
   if (!filter) {
     return items;

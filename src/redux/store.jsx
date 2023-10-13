@@ -1,7 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 
 import { catalogsReducer } from "./catalogsSlise";
-import { filterReducer } from "./filterSlise";
 import  favoriteCardsReducer  from "./favoriteCardsSlice";
 import {
   persistStore,
@@ -30,7 +29,6 @@ const persistedUserReducer = persistReducer(
 export const store = configureStore({
   reducer: {
     catalogs: catalogsReducer,
-    filter: filterReducer,
     favoriteCards: persistedUserReducer,
   },
  

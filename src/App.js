@@ -1,13 +1,15 @@
-
 import { Navigate, Route, Routes } from "react-router-dom";
 import './App.module.css';
 import { Layout } from './components/Layout/Layout';
-import { HomePage } from './pages/HomePage/HomePage';
-import { Catalog } from './pages/CatalogPage';
-import { Favorites } from './pages/FavoritesPage';
 import { Container } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
 import theme from "./theme"; 
+import React, { lazy } from "react";
+
+const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
+const Catalog = lazy(() => import('./pages/CatalogPage'));
+const Favorites = lazy(() => import('./pages/FavoritesPage'));
+
 
 function App() {
   return (

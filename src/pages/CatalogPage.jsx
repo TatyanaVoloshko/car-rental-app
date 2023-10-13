@@ -8,7 +8,7 @@ import {
 } from "../redux/selectors";
 import { fetchCatalogs } from "../redux/operations";
 
-export const Catalog = () => {
+ const Catalog = () => {
   const cards = useSelector(selectFilteredCatalogs);
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
@@ -25,3 +25,5 @@ export const Catalog = () => {
     </div>
   );
 };
+
+export default Catalog;

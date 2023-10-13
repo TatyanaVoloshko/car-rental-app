@@ -2,8 +2,9 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { selectFavoriteCards, selectCatalogs } from "../redux/selectors";
 import CarCard from "../components/CarCard/CarCard";
+import { Grid } from "@mui/material";
 
-export const Favorites = () => {
+ const Favorites = () => {
   const favoriteCards = useSelector(selectFavoriteCards);
   const catalogs = useSelector(selectCatalogs);
   const getCards = (cards, favoriteCards) =>
@@ -14,11 +15,14 @@ export const Favorites = () => {
   return (
     <div>
       <h2>Favorites</h2>
-      <div>
+      <Grid container rowSpacing={6.25} columnSpacing={3.75} mt={1}>
         {getCards(catalogs, favoriteCards).map((card) => (
           <CarCard key={card.id} {...card} />
         ))}
-      </div>
+      </Grid>
+      
     </div>
   );
 };
+
+export default Favorites;

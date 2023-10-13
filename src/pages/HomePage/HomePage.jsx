@@ -4,7 +4,7 @@ import { Container, Grid, List, ListItem, ListItemIcon, ListItemText, Typography
 import CheckIcon from "@mui/icons-material/Check";
 
 
-export const HomePage = () => {
+ const HomePage = () => {
   return (
     <Container sx={{ p: "15px" }}>
       <Typography variant="h4" align="center" sx={{ mb: "15px" }}>
@@ -72,3 +72,5 @@ export const HomePage = () => {
     </Container>
   );
 }
+
+export default HomePage;
