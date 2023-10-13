@@ -4,24 +4,28 @@ const CarOut = require("../CarCard/Images/CarOut.png");
 
 const CarAnimation = () => {
   const [position, setPosition] = useState(0);
+  const maxWidth = window.innerWidth - 100;
 
   useEffect(() => {
-    const animationInterval = setInterval(() => {
-      setPosition((prevPosition) => prevPosition + 1);
-    }, 1);
-      
-      const resetAnimation = () => {
-        setPosition(0);
-      };
+     const animationInterval = setInterval(() => {
+       setPosition((prevPosition) => {
+         if (prevPosition >= maxWidth) {
+           return 0;
+         }
+         return prevPosition + 1;
+       });
+     }, 1);
 
-      const resetInterval = setInterval(resetAnimation, 5000);
+      const resetInterval = setInterval(() => {
+        setPosition(0);
+      }, 5000);
 
 
     return () => {
         clearInterval(animationInterval);
          clearInterval(resetInterval);
     };
-  }, []);
+  }, [maxWidth]);
 
   return (
     <div style={{ position: "relative", width: "100%", height: "100px" }}>
@@ -32,6 +36,7 @@ const CarAnimation = () => {
           position: "absolute",
           left: `${position}px`,
           transition: "left 0.1s",
+          width: "250px",
         }}
       />
     </div>

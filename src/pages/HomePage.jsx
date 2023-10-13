@@ -6,7 +6,7 @@ import CheckIcon from "@mui/icons-material/Check";
 
  const HomePage = () => {
   return (
-    <Container sx={{ p: "15px" }}>
+    <Container sx={{ p: "25px" }}>
       <Typography variant="h4" align="center" sx={{ mb: "15px" }}>
         Are you looking for convenient and reliable transportation in Ukraine?
       </Typography>
@@ -14,25 +14,25 @@ import CheckIcon from "@mui/icons-material/Check";
         <Grid item xs={12} md={6}>
           <List>
             <ListItem>
-              <ListItemIcon>
+              <ListItemIcon sx={{ color: "#3470FF" }}>
                 <CheckIcon />
               </ListItemIcon>
               <ListItemText primary="Wide selection of high-quality vehicles." />
             </ListItem>
             <ListItem>
-              <ListItemIcon>
+              <ListItemIcon sx={{ color: "#3470FF" }}>
                 <CheckIcon />
               </ListItemIcon>
               <ListItemText primary="Flexible rental options to suit your needs." />
             </ListItem>
             <ListItem>
-              <ListItemIcon>
+              <ListItemIcon sx={{ color: "#3470FF" }}>
                 <CheckIcon />
               </ListItemIcon>
               <ListItemText primary="Competitive pricing and special offers." />
             </ListItem>
             <ListItem>
-              <ListItemIcon>
+              <ListItemIcon sx={{ color: "#3470FF" }}>
                 <CheckIcon />
               </ListItemIcon>
               <ListItemText primary="24/7 customer support for a hassle-free experience." />
@@ -42,25 +42,25 @@ import CheckIcon from "@mui/icons-material/Check";
         <Grid item xs={12} md={6}>
           <List>
             <ListItem>
-              <ListItemIcon>
+              <ListItemIcon sx={{ color: "#3470FF" }}>
                 <CheckIcon />
               </ListItemIcon>
               <ListItemText primary="Convenient pick-up and drop-off locations throughout Ukraine." />
             </ListItem>
             <ListItem>
-              <ListItemIcon>
+              <ListItemIcon sx={{ color: "#3470FF" }}>
                 <CheckIcon />
               </ListItemIcon>
               <ListItemText primary="Easy online booking and reservation management." />
             </ListItem>
             <ListItem>
-              <ListItemIcon>
+              <ListItemIcon sx={{ color: "#3470FF" }}>
                 <CheckIcon />
               </ListItemIcon>
               <ListItemText primary="Safe and well-maintained vehicles for your peace of mind." />
             </ListItem>
             <ListItem>
-              <ListItemIcon>
+              <ListItemIcon sx={{ color: "#3470FF" }}>
                 <CheckIcon />
               </ListItemIcon>
               <ListItemText primary="Explore Ukraine at your own pace and on your own schedule." />

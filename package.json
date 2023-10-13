@@ -50,5 +50,9 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
-  }
+  },
+  "description": "Rent-a-Ride is your go-to car rental service, providing convenient and reliable transportation in Ukraine. Explore Ukraine at your own pace with our wide selection of high-quality vehicles, flexible rental options, competitive pricing, and 24/7 customer support.",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC"
 }
