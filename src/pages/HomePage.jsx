@@ -1,5 +1,5 @@
 import React from 'react'
-import CarAnimation from '../../components/Main/Main';
+import CarAnimation from '../components/Main/Main';
 import { Container, Grid, List, ListItem, ListItemIcon, ListItemText, Typography } from '@mui/material';
 import CheckIcon from "@mui/icons-material/Check";
 

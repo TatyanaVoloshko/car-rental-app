@@ -8,7 +8,7 @@ import React, { lazy, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { fetchCatalogs } from "./redux/operations";
 
-const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
+const HomePage = lazy(() => import('./pages/HomePage'));
 const Catalog = lazy(() => import('./pages/CatalogPage'));
 const Favorites = lazy(() => import('./pages/FavoritesPage'));
 
@@ -20,18 +20,20 @@ function App() {
    }, [dispatch]);
   
   return (
-    <ThemeProvider theme={theme}>
-      <Container style={{ maxWidth: "100%" }}>
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<HomePage />} />
-            <Route path="/catalog" element={<Catalog />} />
-            <Route path="/favorites" element={<Favorites />} />
+    <>
+      <ThemeProvider theme={theme}>
+        <Container style={{ maxWidth: "100%" }}>
+          <Routes>
+            <Route path="/" element={<Layout />}>
+              <Route index element={<HomePage />} />
+              <Route path="/catalog" element={<Catalog />} />
+              <Route path="/favorites" element={<Favorites />} />
+            </Route>
             <Route path="*" element={<Navigate to="/" replace />} />
-          </Route>
-        </Routes>
-      </Container>
-    </ThemeProvider>
+          </Routes>
+        </Container>
+      </ThemeProvider>
+    </>
   );
 }
 
