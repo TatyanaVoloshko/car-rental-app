@@ -1,43 +1,48 @@
-import { configureStore } from "@reduxjs/toolkit";
-
-import { catalogsReducer } from "./catalogsSlise";
-import  favoriteCardsReducer  from "./favoriteCardsSlice";
+import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
+import { combineReducers } from "redux";
+import { persistStore, persistReducer } from "redux-persist";
+import storage from "redux-persist/lib/storage";
 import {
-  persistStore,
-  persistReducer,
   FLUSH,
   REHYDRATE,
   PAUSE,
   PERSIST,
   PURGE,
   REGISTER,
-} from "redux-persist";
-import storage from "redux-persist/lib/storage";
+} from "redux-persist/es/constants";
+import { catalogsReducer } from "./catalogsSlise";
+import favoriteCardsReducer from "./favoriteCardsSlice";
 
-const favoritePersistConfig = {
-  key: "favoriteCards",
+const rootReducer = combineReducers({
+  catalogs: catalogsReducer,
+  favoriteCards: favoriteCardsReducer,
+});
+
+const persistConfig = {
+  key: "root",
   storage,
   whitelist: ["favoriteCards"],
+  version: 1, 
+  migrate: (state) => {
+   
+    if (state) {
+      return Promise.resolve(state);
+    }
+    return Promise.resolve();
+  },
 };
 
-const persistedUserReducer = persistReducer(
-  favoritePersistConfig,
-  favoriteCardsReducer
-);
+const persistedReducer = persistReducer(persistConfig, rootReducer);
 
+const customizedMiddleware = getDefaultMiddleware({
+  serializableCheck: {
+    ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+  },
+});
 
 export const store = configureStore({
-  reducer: {
-    catalogs: catalogsReducer,
-    favoriteCards: persistedUserReducer,
-  },
- 
-  middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware({
-      serializableCheck: {
-        ignoreActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-      },
-    }),
+  reducer: persistedReducer,
+  middleware: customizedMiddleware,
 });
 
 export const persistor = persistStore(store);
