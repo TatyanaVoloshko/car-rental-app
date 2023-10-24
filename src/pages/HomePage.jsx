@@ -8,7 +8,7 @@ import CheckIcon from "@mui/icons-material/Check";
   return (
     <Container sx={{ p: "25px" }}>
       <Typography variant="h4" align="center" sx={{ mb: "15px" }}>
-        Are you looking for convenient and reliable transportation in Ukraine?
+        Are you looking for convenient and reliable transport in Ukraine?
       </Typography>
       <Grid container spacing={3} sx={{ mt: "15px" }}>
         <Grid item xs={12} md={6}>
